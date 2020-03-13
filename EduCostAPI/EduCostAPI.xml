@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EduCostAPI</name>
+    </assembly>
+    <members>
+        <member name="M:EduCostAPI.Controllers.EduCostController.Cost(System.String,System.Boolean)">
+            <summary>
+            Returns total cost
+            </summary>
+            <remarks>Calculates total cost of college including tuition and room and board (optional).</remarks>
+            <param name="CollegeName">Name of College</param>
+            <param name="RoomAndBoard">Include room and board fees?</param>
+            <response code="200">Successful: Total cost in US Dollar.</response>
+            <response code="400">Error: College name is required. (none given)</response>
+            <response code="404">Error: College not found.</response>
+        </member>
+    </members>
+</doc>
