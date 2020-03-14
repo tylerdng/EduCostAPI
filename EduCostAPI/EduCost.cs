@@ -10,9 +10,8 @@ namespace EduCostAPI
         {
             WebClient client = new WebClient();
             Stream stream = client.OpenRead("https://raw.githubusercontent.com/tylerdng/EduCostAPI/master/EduCostAPI/Resources/college_costs.csv");
-            StreamReader reader = new StreamReader(stream);
-            String content = reader.ReadToEnd();
-            StreamReader csvReader = new StreamReader(File.OpenRead("C:Resources/college_costs.csv"));
+            StreamReader csvReader = new StreamReader(stream);
+
             while (!csvReader.EndOfStream)
             {
                 string[] data = csvReader.ReadLine().Split(",");
