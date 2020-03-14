@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 
 namespace EduCostAPI
 {
@@ -7,6 +8,10 @@ namespace EduCostAPI
     {
         public double getCost(string CollegeName, bool RoomAndBoard)
         {
+            WebClient client = new WebClient();
+            Stream stream = client.OpenRead("https://raw.githubusercontent.com/tylerdng/EduCostAPI/master/EduCostAPI/Resources/college_costs.csv");
+            StreamReader reader = new StreamReader(stream);
+            String content = reader.ReadToEnd();
             StreamReader csvReader = new StreamReader(File.OpenRead("C:Resources/college_costs.csv"));
             while (!csvReader.EndOfStream)
             {
