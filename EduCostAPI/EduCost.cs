@@ -7,8 +7,7 @@ namespace EduCostAPI
     {
         public double getCost(string CollegeName, bool RoomAndBoard)
         {
-
-            StreamReader csvReader = new StreamReader(File.OpenRead("C:/Users/tyler/source/repos/EduCostAPI/EduCostAPI/Resources/college_costs.csv"));
+            StreamReader csvReader = new StreamReader(File.OpenRead("C:Resources/college_costs.csv"));
             while (!csvReader.EndOfStream)
             {
                 string[] data = csvReader.ReadLine().Split(",");

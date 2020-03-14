@@ -36,7 +36,7 @@ namespace EduCostAPI
                 {
                     Version = "v1",
                     Title = "College Education Cost API",
-                    Description = "Simple API for determining cost of a given college including tuition as well as room and board fees (optional). Created with .Net Core 3.1.",
+                    Description = "Simple API for determining cost of a given college including tuition as well as room and board fees (optional). Created with .Net Core 3.1",
                     Contact = new OpenApiContact
                     {
                         Name = "Tyler Ng",

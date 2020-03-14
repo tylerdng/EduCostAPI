@@ -4,7 +4,7 @@
         <name>EduCostAPI</name>
     </assembly>
     <members>
-        <member name="M:EduCostAPI.Controllers.EduCostController.Cost(System.String,System.Boolean)">
+        <member name="M:EduCostAPI.Controllers.CollegeController.Cost(System.String,System.Boolean)">
             <summary>
             Returns total cost
             </summary>

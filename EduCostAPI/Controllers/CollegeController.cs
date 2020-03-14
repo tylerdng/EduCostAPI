@@ -5,7 +5,7 @@ namespace EduCostAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class EduCostController : ControllerBase
+    public class CollegeController : ControllerBase
     {
         /// <summary>
         /// Returns total cost
@@ -17,6 +17,7 @@ namespace EduCostAPI.Controllers
         /// <response code="400">Error: College name is required. (none given)</response>
         /// <response code="404">Error: College not found.</response>
         [HttpGet]
+        [Route("/College/Cost")]
         public virtual IActionResult Cost(string CollegeName, bool RoomAndBoard = true)
         {
             if (CollegeName == null) return this.BadRequest("College name is required.");
