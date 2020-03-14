@@ -20,7 +20,7 @@ namespace EduCostAPI.Controllers
         [Route("/College/Cost")]
         public virtual IActionResult Cost(string CollegeName, bool RoomAndBoard = true)
         {
-            if (CollegeName == null) return this.BadRequest("College name is required.");
+            if (CollegeName == null || CollegeName.ToLower().Equals("college")) return this.BadRequest("College name is required.");
             
             double cost = new EduCost().getCost(CollegeName, RoomAndBoard);
 
