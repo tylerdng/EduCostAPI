@@ -17,7 +17,7 @@ namespace EduCostAPI.Controllers
         /// <response code="400">Error: College name is required. (none given)</response>
         /// <response code="404">Error: College not found.</response>
         [HttpGet]
-        [Route("/College/Cost")]
+        [Route("/College/Cost/{CollegeName}/{RoomAndBoard?}")]
         public virtual IActionResult Cost(string CollegeName, bool RoomAndBoard = true)
         {
             if (CollegeName == null || CollegeName.ToLower().Equals("college")) return this.BadRequest("College name is required.");
