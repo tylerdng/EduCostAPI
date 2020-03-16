@@ -17,14 +17,14 @@ namespace EduCostAPI.Controllers
         /// <response code="400">Error: College name is required. (none given)</response>
         /// <response code="404">Error: College not found.</response>
         [HttpGet]
-        [Route("/College/Cost/{CollegeName}/{RoomAndBoard?}")]
+        [Route("/College/Cost/{CollegeName?}/{RoomAndBoard?}")]
         public virtual IActionResult Cost(string CollegeName, bool RoomAndBoard = true)
         {
-            if (CollegeName == null || CollegeName.ToLower().Equals("college")) return this.BadRequest("College name is required.");
+            if (CollegeName == null || CollegeName.ToLower().Equals("college")) return this.BadRequest("Error: College name is required.");
             
             double cost = new EduCost().getCost(CollegeName, RoomAndBoard);
 
-            if (cost == -1) return this.NotFound("College not found.");
+            if (cost == -1) return this.NotFound("Error: College not found.");
 
             return new ObjectResult(Math.Round(cost,2));
         }
